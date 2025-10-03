@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container mt-4">
+  <h2 class="mb-4">📊 Panel Principal</h2>
+  <p>Bienvenido/a {{ session['usuario'] }} al sistema de facturación.</p>
+
+  <div class="row">
+    <div class="col-md-3">
+      <a href="{{ url_for('clientes') }}" class="text-decoration-none">
+        <div class="card shadow-sm text-center p-3 mb-4 bg-light h-100">
+          <h4>👥 Clientes</h4><p>Gestionar clientes</p>
+        </div>
+      </a>
+    </div>
+
+    <div class="col-md-3">
+      <a href="{{ url_for('productos') }}" class="text-decoration-none">
+        <div class="card shadow-sm text-center p-3 mb-4 bg-light h-100">
+          <h4>📦 Productos</h4><p>Gestionar productos</p>
+        </div>
+      </a>
+    </div>
+
+    <div class="col-md-3">
+      <a href="{{ url_for('facturas') }}" class="text-decoration-none">
+        <div class="card shadow-sm text-center p-3 mb-4 bg-light h-100">
+          <h4>🧾 Facturas</h4><p>Emitir y consultar facturas</p>
+        </div>
+      </a>
+    </div>
+
+    <div class="col-md-3">
+      <a href="{{ url_for('reportes') }}" class="text-decoration-none">
+        <div class="card shadow-sm text-center p-3 mb-4 bg-light h-100">
+          <h4>📑 Reportes</h4><p>Ver reportes de ventas</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+</body>
+</html>

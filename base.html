@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>{% block title %}Mi Facturación{% endblock %}</title>
+</head>
+<body>
+  <nav>
+    <a href="{{ url_for('dashboard') }}">Dashboard</a> |
+    <a href="{{ url_for('clientes') }}">Clientes</a> |
+    <a href="{{ url_for('productos') }}">Productos</a> |
+    <a href="{{ url_for('facturas') }}">Facturas</a> |
+    <a href="{{ url_for('reportes') }}">Reportes</a>
+  </nav>
+  <hr>
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      <ul>
+      {% for m in messages %}<li>{{ m }}</li>{% endfor %}
+      </ul>
+    {% endif %}
+  {% endwith %}
+  {% block content %}{% endblock %}
+</body>
+</html>
